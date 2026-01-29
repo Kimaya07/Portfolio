@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
@@ -11,13 +11,42 @@ const navLinks = [
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
   const currentYear = new Date().getFullYear();
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < 50) {
+        // Always show navbar at top of page
+        setIsVisible(true);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up - show navbar
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        // Scrolling down - hide navbar
+        setIsVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
+  }, [lastScrollY]);
 
   return (
     <>
       {/* Desktop Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-6 py-6 md:px-12">
+      <motion.header 
+        initial={{ y: 0 }}
+        animate={{ y: isVisible ? 0 : -100 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="fixed top-0 left-0 right-0 z-50 px-6 py-6 md:px-12 bg-background/80 backdrop-blur-sm"
+      >
         <nav className="flex items-start justify-between">
           {/* Logo */}
           <Link 
@@ -71,7 +100,7 @@ export const Navigation = () => {
             />
           </button>
         </nav>
-      </header>
+      </motion.header>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
