@@ -207,8 +207,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - Portfolio: [kimaya-portfolio.vercel.app](https://your-url.vercel.app)
 - LinkedIn: [@kimayaa1234](https://linkedin.com/in/kimayaa1234)
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: kimayaambekar@gmail.com
+- GitHub: [@Kimaya07](https://github.com/Kimaya07)
+- Email: kimaya.ambekar1@gmail.com
 
 ## 🙏 Acknowledgments
 
