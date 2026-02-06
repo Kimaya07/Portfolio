@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 const navLinks = [
   { name: "HOME", path: "/" },
   { name: "WORK", path: "/work" },
-  { name: "ON THE SIDE", path: "/side" },
+  // { name: "ON THE SIDE", path: "/side" },
   { name: "INFO", path: "/info" },
 ];
 
@@ -47,17 +47,17 @@ export const Navigation = () => {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className="fixed top-0 left-0 right-0 z-50 px-6 py-6 md:px-12 bg-background/80 backdrop-blur-sm"
       >
-        <nav className="flex items-start justify-between">
+        <nav className="flex items-start justify-between relative">
           {/* Logo */}
           <Link 
             to="/" 
             className="font-display text-sm font-medium tracking-widest text-cream hover:text-gold transition-colors"
           >
-            MHHW
+          KIM
           </Link>
 
           {/* Center Nav Links - Desktop */}
-          <ul className="hidden md:flex flex-col items-start gap-1 text-xs tracking-widest">
+          <ul className="hidden md:flex flex-col items-start gap-1 text-xs tracking-widest absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link

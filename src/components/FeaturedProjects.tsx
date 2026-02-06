@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 const projects = [
   {
     id: 1,
-    title: "LIVERPOOL FC",
-    type: "MOBILE APP",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=800&fit=crop",
-    slug: "liverpool-fc",
+    title: "NETFLIX CLONE",
+    type: "REACT • FIREBASE • TMDB API",
+    image: "https://images.unsplash.com/photo-1512070679279-8988d32161be?q=80&w=1938&auto=format&fit=crop",
+    slug: "netflix-clone",
   },
   {
     id: 2,
-    title: "THE NORWEGIAN CAPSULE",
-    type: "RESPONSIVE WEB",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop",
-    slug: "norwegian-capsule",
+    title: "REAL-TIME AI CHATBOT",
+    type: "REACT • NODE.JS • GEMINI API",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1932&auto=format&fit=crop",
+    slug: "ai-chatbot",
   },
 ];
 
@@ -38,12 +38,15 @@ export const FeaturedProjects = () => {
             </h2>
           </div>
           
-          {/* Vertical Chinese decoration */}
+          {/* Vertical Japanese decoration */}
           <div className="flex flex-col items-center text-gold-muted font-serif mt-4">
             <span className="text-sm">﹁</span>
-            <span className="text-xl">作</span>
-            <span className="text-xl">品</span>
-            <span className="text-xl">集</span>
+            <span className="text-xl">プ</span>
+            <span className="text-xl">ロ</span>
+            <span className="text-xl">ジ</span>
+            <span className="text-xl">ェ</span>
+            <span className="text-xl">ク</span>
+            <span className="text-xl">ト</span>
             <span className="text-sm">﹂</span>
           </div>
         </motion.div>
@@ -108,9 +111,9 @@ export const FeaturedProjects = () => {
           className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8"
         >
           <p className="text-lg text-primary-foreground/70 max-w-xl leading-relaxed">
-            Immersive experiences uniquely created based on user-insights 
-            and design thinking methodologies. Always setting you apart 
-            from the industry.
+            Full-stack applications built with modern technologies and best
+            practices. From streaming platforms to AI-powered tools, each
+            project showcases scalable architecture and polished user experience.
           </p>
 
           <Link
@@ -121,7 +124,7 @@ export const FeaturedProjects = () => {
               VIEW ALL WORK
             </span>
             <span className="text-sm text-gold-muted mt-1">
-              看作品集
+              全ての作品を見る
             </span>
           </Link>
         </motion.div>

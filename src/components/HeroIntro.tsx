@@ -16,26 +16,26 @@ export const HeroIntro = () => {
             {/* Name construction */}
             <div className="space-y-2">
               <p className="text-xs tracking-[0.3em] text-cream/60 uppercase">
-                MHHW
+                KIM
               </p>
               <p className="text-sm tracking-widest text-cream/80">
                 <span className="text-cream/60">is the folio of</span>
               </p>
               <h1 className="font-display text-display-md font-bold text-cream">
-                mason
+                Kimaya
                 <span className="text-gold mx-2">[</span>
-                <span className="text-cream">HOI HEI</span>
+                <span className="text-cream">HIE Again</span>
                 <span className="text-gold mx-2">]</span>
-                wong
+                Ambekar
                 <span className="text-gold">↓</span>
               </h1>
             </div>
 
             {/* Title */}
             <p className="text-sm tracking-widest text-cream/70">
-              <span className="text-cream">visual designer</span>, swimmer
+              <span className="text-cream">Frontend developer obsessed with pixels</span>, sketching
               <br />
-              and <span className="text-cream">Porsche fanatic</span>
+              and <span className="text-cream">dancing through ideas</span>
             </p>
           </motion.div>
 
@@ -50,21 +50,19 @@ export const HeroIntro = () => {
             {/* Current Position */}
             <div className="space-y-2">
               <p className="text-2xl md:text-3xl font-display font-medium text-cream">
-                SR VISUAL DESIGN CONSULTANT
+                FRONTEND DEVELOPER
               </p>
-              <p className="text-lg text-cream/60">
+              {/* <p className="text-lg text-cream/60">
                 @ IBM IX
-              </p>
+              </p> */}
               <p className="text-lg text-cream/80 mt-4">
-                BASED IN LONDON
+                BASED IN INDIA
               </p>
             </div>
 
             {/* Mission Statement */}
             <p className="text-base md:text-lg text-cream/70 leading-relaxed max-w-lg">
-              I partner with brands, companies and entrepreneurs to transform 
-              visions into captivating experiences, all designed with the 
-              users at the helm.
+              I turn designs into pixel-perfect experiences and bring ideas to life through code—where design, dev, and pixels collide.
             </p>
           </motion.div>
         </div>
@@ -79,14 +77,14 @@ export const HeroIntro = () => {
         >
           <div className="flex items-center gap-4">
             <span className="text-xs tracking-[0.2em] text-cream/60">
-              [SCROLL<span className="text-gold mx-1">請下去</span>DOWN]
+             [SCROLL<span className="text-gold mx-1">スクロールダウン</span>DOWN]
             </span>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-xs tracking-[0.2em] text-cream/60">
               [NICE TO MEET YOU]
             </span>
-            <span className="text-gold text-sm">「很高興見到你」</span>
+          <span className="text-gold text-sm">「はじめまして」</span>
           </div>
         </motion.div>
       </div>

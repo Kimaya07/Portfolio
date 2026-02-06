@@ -25,61 +25,81 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Large Letter Display - M H H W */}
-      <div className="relative z-10 w-full px-4">
+      {/* Large Letter Display - KIM AYA */}
+      <div className="relative z-10 w-full">
         <div className="flex items-center justify-center gap-4 md:gap-8">
-          {/* M */}
+          {/* K */}
           <motion.span
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
             className="font-display text-[15vw] md:text-[18vw] font-bold text-cream leading-none"
           >
-            M
+            K
           </motion.span>
 
-          {/* H */}
+          {/* I */}
           <motion.span
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
             className="font-display text-[15vw] md:text-[18vw] font-bold text-cream leading-none"
           >
-            H
+            I
+          </motion.span>
+
+          {/* M */}
+          <motion.span
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="font-display text-[15vw] md:text-[18vw] font-bold text-cream leading-none"
+          >
+            M
           </motion.span>
 
           {/* Chinese Characters Column */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
+            transition={{ duration: 1, delay: 0.8 }}
             className="flex flex-col items-center text-gold font-serif"
           >
             <span className="text-lg md:text-2xl">﹁</span>
-            <span className="text-2xl md:text-4xl my-1">黃</span>
-            <span className="text-2xl md:text-4xl my-1">愷</span>
-            <span className="text-2xl md:text-4xl my-1">熹</span>
+            <span className="text-2xl md:text-4xl my-1">貴</span>
+            <span className="text-2xl md:text-4xl my-1">摩</span>
+            <span className="text-2xl md:text-4xl my-1">耶</span>
             <span className="text-lg md:text-2xl">﹂</span>
           </motion.div>
 
-          {/* H */}
-          <motion.span
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="font-display text-[15vw] md:text-[18vw] font-bold text-cream leading-none"
-          >
-            H
-          </motion.span>
-
-          {/* W */}
+          {/* A */}
           <motion.span
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1 }}
             className="font-display text-[15vw] md:text-[18vw] font-bold text-cream leading-none"
           >
-            W
+            A
+          </motion.span>
+
+          {/* Y */}
+          <motion.span
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="font-display text-[15vw] md:text-[18vw] font-bold text-cream leading-none"
+          >
+            Y
+          </motion.span>
+
+          {/* A */}
+          <motion.span
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.4 }}
+            className="font-display text-[15vw] md:text-[18vw] font-bold text-cream leading-none"
+          >
+            A
           </motion.span>
         </div>
       </div>

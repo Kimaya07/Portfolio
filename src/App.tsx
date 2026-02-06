@@ -6,9 +6,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Work from "./pages/Work";
-import Side from "./pages/Side";
+// import Side from "./pages/Side";
 import Info from "./pages/Info";
 import NotFound from "./pages/NotFound";
+import NetflixClone from "./pages/NetflixClone";
+import WorkInProgress from "./pages/WorkInProgress";
 
 const queryClient = new QueryClient();
 
@@ -22,10 +24,12 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/work" element={<Work />} />
-          <Route path="/side" element={<Side />} />
+          {/* <Route path="/side" element={<Side />} /> */}
           <Route path="/info" element={<Info />} />
+          <Route path="/work/netflix-clone" element={<NetflixClone />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
+           <Route path="/work/:slug" element={<WorkInProgress />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

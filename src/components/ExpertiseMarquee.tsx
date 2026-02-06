@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 
 const services = [
-  "ART DIRECTION",
-  "UI / VISUAL DESIGN",
-  "USER EXPERIENCE DESIGN",
-  "ENTERPRISE DESIGN THINKING",
-  "RESEARCH / STRATEGY",
-  "BRAND IDENTITY",
+  "REACT DEVELOPMENT",
+  "FULL-STACK ENGINEERING",
+  "3D WEB EXPERIENCES",
+  "RESPONSIVE UI/UX",
+  "API INTEGRATION",
+  "PERFORMANCE OPTIMIZATION",
 ];
 
 const MarqueeRow = ({ reverse = false }: { reverse?: boolean }) => {
@@ -39,7 +39,7 @@ export const ExpertiseMarquee = () => {
           viewport={{ once: true }}
           className="text-xs tracking-[0.3em] text-cream/60 text-center"
         >
-          [EXPERTISE AND SERVICES]
+          [技術スタック & サービス]
         </motion.p>
       </div>
 
@@ -59,7 +59,7 @@ export const ExpertiseMarquee = () => {
           viewport={{ once: true }}
           className="text-xs tracking-[0.3em] text-cream/60 text-center"
         >
-          [FUELED BY CURIOSITY, SHAPED BY INSIGHT]
+          [好奇心に駆られ、洞察によって形作られる]
         </motion.p>
       </div>
     </section>

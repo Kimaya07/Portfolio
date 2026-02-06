@@ -50,7 +50,7 @@ const WorkHero = () => {
             O
           </motion.span>
 
-          {/* Chinese Characters Column */}
+          {/* Japanese Characters Column */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -106,51 +106,51 @@ const WorkHero = () => {
 const allProjects = [
   {
     id: 1,
-    title: "LIVERPOOL FC",
-    type: "MOBILE APP",
-    category: "Mobile",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=800&fit=crop",
-    slug: "liverpool-fc",
+    title: "NETFLIX CLONE",
+    type: "REACT • FIREBASE • TMDB API",
+    category: "Web",
+    image: "https://images.unsplash.com/photo-1512070679279-8988d32161be?w=1200&h=800&fit=crop",
+    slug: "netflix-clone",
   },
   {
     id: 2,
-    title: "THE NORWEGIAN CAPSULE",
-    type: "RESPONSIVE WEB",
+    title: "REAL-TIME AI CHATBOT",
+    type: "REACT • NODE.JS • GEMINI API",
     category: "Web",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop",
-    slug: "norwegian-capsule",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop",
+    slug: "ai-chatbot",
   },
   {
     id: 3,
-    title: "FINTECH DASHBOARD",
-    type: "WEB APPLICATION",
-    category: "Web",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",
-    slug: "fintech-dashboard",
+    title: "3D PORTFOLIO SITE",
+    type: "REACT • THREE.JS • BLENDER",
+    category: "3D",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=800&fit=crop",
+    slug: "3d-portfolio",
   },
   {
     id: 4,
-    title: "WELLNESS APP",
-    type: "MOBILE APP",
-    category: "Mobile",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=800&fit=crop",
-    slug: "wellness-app",
-  },
-  {
-    id: 5,
     title: "E-COMMERCE PLATFORM",
-    type: "RESPONSIVE WEB",
-    category: "Web",
+    type: "MERN STACK • STRIPE",
+    category: "Full-Stack",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
     slug: "ecommerce-platform",
   },
   {
+    id: 5,
+    title: "TASK MANAGEMENT APP",
+    type: "REACT • MONGODB • EXPRESS",
+    category: "Full-Stack",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=800&fit=crop",
+    slug: "task-manager",
+  },
+  {
     id: 6,
-    title: "TRAVEL COMPANION",
-    type: "MOBILE APP",
-    category: "Mobile",
-    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&h=800&fit=crop",
-    slug: "travel-companion",
+    title: "WEATHER DASHBOARD",
+    type: "REACT • API INTEGRATION",
+    category: "Web",
+    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=1200&h=800&fit=crop",
+    slug: "weather-dashboard",
   },
 ];
 
@@ -170,8 +170,9 @@ const Work = () => {
             transition={{ duration: 0.8 }}
             className="text-lg text-cream/70 max-w-2xl mb-16"
           >
-            A curated collection of digital experiences, crafted with intention 
-            and designed to create meaningful connections.
+            A curated collection of web applications and 3D experiences, built
+            with modern technologies and best practices. Each project demonstrates
+            scalable architecture, clean code, and attention to detail.
           </motion.p>
         </div>
       </section>

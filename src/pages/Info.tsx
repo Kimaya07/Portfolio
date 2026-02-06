@@ -49,7 +49,7 @@ const InfoHero = () => {
             N
           </motion.span>
 
-          {/* Chinese Characters Column */}
+          {/* Japanese Characters Column */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -57,8 +57,8 @@ const InfoHero = () => {
             className="flex flex-col items-center text-gold font-serif"
           >
             <span className="text-lg md:text-2xl">﹁</span>
-            <span className="text-2xl md:text-4xl my-1">簡</span>
-            <span className="text-2xl md:text-4xl my-1">介</span>
+            <span className="text-2xl md:text-4xl my-1">情</span>
+            <span className="text-2xl md:text-4xl my-1">報</span>
             <span className="text-lg md:text-2xl">﹂</span>
           </motion.div>
 
@@ -118,7 +118,7 @@ const Info = () => {
           >
             <div className="relative aspect-[3/4] overflow-hidden bg-secondary">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1067&fit=crop"
+                src="https://images.unsplash.com/photo-1763152496539-302ef51ef66f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Portrait"
                 className="w-full h-full object-cover"
               />
@@ -134,34 +134,35 @@ const Info = () => {
           >
             <div>
               <h2 className="font-display text-display-sm font-bold text-cream mb-4">
-                A <span className="text-gold">[cross-cultural]</span> perspective
+                Where <span className="text-gold">[code]</span> meets creativity
               </h2>
               <p className="text-base text-cream/70 leading-relaxed">
-                Born in Hong Kong and raised in the English countryside, my design 
-                approach is shaped by this unique blend of Eastern and Western 
-                influences. This dual perspective allows me to create experiences 
-                that resonate across cultural boundaries.
+                I'm a full-stack developer based in India with a passion for building
+                scalable web applications and immersive 3D experiences. My approach
+                combines technical expertise with a designer's eye, ensuring every
+                project balances performance with visual appeal.
               </p>
             </div>
 
-            <div>
+            {/* <div>
               <h3 className="font-display text-xl font-bold text-cream mb-3">
                 Currently
               </h3>
               <p className="text-base text-cream/70">
-                Senior Visual Design Consultant at IBM iX, based in London.
+                ReactJS Developer Intern at Fareintelligence Pvt Ltd, optimizing
+                performance and building responsive UI components.
               </p>
-            </div>
+            </div> */}
 
             <div>
               <h3 className="font-display text-xl font-bold text-cream mb-3">
                 Philosophy
               </h3>
               <p className="text-base text-cream/70 leading-relaxed">
-                Design to me is a bridge between emotion and function. My goal has 
-                always been to elevate everyday interactions into something more 
-                meaningful and crucially, quietly threading in moments of joy that 
-                catch us by surprise and stay with us for years to come.
+                I believe great development is where logic meets creativity. My goal
+                is to build applications that not only perform flawlessly but feel
+                intuitive and engaging. From responsive interfaces to 3D experiences,
+                I focus on making technology accessible and delightful.
               </p>
             </div>
 
@@ -171,9 +172,21 @@ const Info = () => {
               </h3>
               <div className="space-y-4">
                 {[
-                  { role: "Sr Visual Design Consultant", company: "IBM iX", years: "2022 — Present" },
-                  { role: "Visual Designer", company: "Publicis Sapient", years: "2020 — 2022" },
-                  { role: "UI/UX Designer", company: "Freelance", years: "2018 — 2020" },
+                  { 
+                    role: "ReactJS Developer Intern", 
+                    company: "Fareintelligence Pvt Ltd", 
+                    years: "Dec 2024 — Jun 2025" 
+                  },
+                  { 
+                    role: "UI/UX Intern", 
+                    company: "Jujubee Digital", 
+                    years: "Sep 2024 — Nov 2024" 
+                  },
+                  { 
+                    role: "Web Development Intern", 
+                    company: "Prodigy Infotech", 
+                    years: "Oct 2023 — Jan 2024" 
+                  },
                 ].map((job, index) => (
                   <div key={index} className="flex justify-between items-start border-b border-cream/10 pb-4">
                     <div>
@@ -188,13 +201,24 @@ const Info = () => {
 
             <div>
               <h3 className="font-display text-xl font-bold text-cream mb-3">
+                Beyond Code
+              </h3>
+              <p className="text-base text-cream/70">
+                When I'm not coding, you'll find me in the pool training or
+                dreaming about Porsches. I'm also learning Japanese and love
+                blending my technical skills with 3D modeling in Blender.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-display text-xl font-bold text-cream mb-3">
                 Get in Touch
               </h3>
               <a 
-                href="mailto:hello@masonwong.com" 
+                href="mailto:kimayaambekar@gmail.com" 
                 className="text-gold hover:text-cream transition-colors"
               >
-                hello@masonwong.com
+                kimaya.ambekar1@gmail.com
               </a>
             </div>
           </motion.div>
@@ -210,15 +234,30 @@ const Info = () => {
             viewport={{ once: true }}
             className="font-display text-display-md font-bold text-primary-foreground mb-12"
           >
-            Skills & Tools
+            SKILLS 
+           <span className="ml-5 text-sm text-gold ">
+             [ 技術スタック ]
+            </span>
           </motion.h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { category: "Design", skills: ["Figma", "Sketch", "Adobe CC", "Framer"] },
-              { category: "Strategy", skills: ["User Research", "Workshops", "Design Thinking", "Prototyping"] },
-              { category: "Development", skills: ["HTML/CSS", "React", "Webflow", "Principle"] },
-              { category: "Soft Skills", skills: ["Collaboration", "Storytelling", "Mentoring", "Leadership"] },
+              { 
+                category: "Frontend", 
+                skills: ["React", "TypeScript", "Tailwind CSS", "HTML5/CSS3"] 
+              },
+              { 
+                category: "Backend", 
+                skills: ["Node.js", "Python", "Express", "MongoDB"] 
+              },
+              { 
+                category: "Tools", 
+                skills: ["Git/GitHub", "Figma", "Postman", "VS Code"] 
+              },
+              { 
+                category: "Creative", 
+                skills: ["Blender", "Unity", "3D Modeling", "UI/UX Design"] 
+              },
             ].map((group, index) => (
               <motion.div
                 key={group.category}
