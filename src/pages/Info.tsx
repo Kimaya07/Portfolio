@@ -204,9 +204,9 @@ const Info = () => {
                 Beyond Code
               </h3>
               <p className="text-base text-cream/70">
-                When I'm not coding, you'll find me in the pool training or
-                dreaming about Porsches. I'm also learning Japanese and love
-                blending my technical skills with 3D modeling in Blender.
+                When I'm not debugging code, I'm either grinding through games
+                or crafting 3D models in Blender. Currently learning Japanese
+                because anime subtitles move too fast.
               </p>
             </div>
 
