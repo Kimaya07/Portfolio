@@ -173,7 +173,7 @@ const Info = () => {
               <div className="space-y-4">
                 {[
                   { 
-                    role: "ReactJS Developer Intern", 
+                    role: "ReactJS Developer", 
                     company: "Fareintelligence Pvt Ltd", 
                     years: "Dec 2024 — Jun 2025" 
                   },
