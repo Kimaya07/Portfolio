@@ -2,8 +2,27 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { useState, useEffect } from "react";
 
 const Coboard = () => {
+  const [lightbox, setLightbox] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (lightbox) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [lightbox]);
+
+  const screenshots = [
+    { src: "/Coboard1.png", alt: "Coboard - Whiteboard View" },
+    { src: "/Coboard2.png", alt: "Coboard - Blackboard View" },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -16,7 +35,6 @@ const Coboard = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Back Button */}
             <Link
               to="/work"
               className="inline-flex items-center gap-2 text-cream/60 hover:text-cream transition-colors mb-8"
@@ -25,7 +43,6 @@ const Coboard = () => {
               <span className="text-sm tracking-widest">BACK TO WORK</span>
             </Link>
 
-            {/* Project Title */}
             <h1 className="font-display text-display-lg md:text-display-xl font-bold text-cream mb-4">
               COBOARD
             </h1>
@@ -33,7 +50,6 @@ const Coboard = () => {
               REACT • NODE.JS • SOCKET.IO • CANVAS API
             </p>
 
-            {/* Project Tags */}
             <div className="flex flex-wrap gap-3 mb-12">
               <span className="px-4 py-2 bg-cream/10 text-cream text-xs tracking-widest rounded-full">
                 REAL-TIME COLLABORATION
@@ -68,18 +84,17 @@ const Coboard = () => {
       </section>
 
       {/* Project Details */}
-      <section className="px-6 md:px-12 pb-24">
+      <section className="px-6 md:px-12 pb-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-24">
-          {/* Left Column - Overview */}
+
+          {/* Left Column */}
           <div className="lg:col-span-2 space-y-12">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <h2 className="font-display text-2xl font-bold text-cream mb-6">
-                Overview
-              </h2>
+              <h2 className="font-display text-2xl font-bold text-cream mb-6">Overview</h2>
               <p className="text-base text-cream/70 leading-relaxed mb-4">
                 Coboard is a real-time collaborative whiteboard where multiple users
                 can draw together on a shared canvas simultaneously. It features a
@@ -101,9 +116,7 @@ const Coboard = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <h2 className="font-display text-2xl font-bold text-cream mb-6">
-                Key Features
-              </h2>
+              <h2 className="font-display text-2xl font-bold text-cream mb-6">Key Features</h2>
               <ul className="space-y-4">
                 {[
                   "Real-time multi-user drawing — see everyone's strokes instantly via Socket.io",
@@ -128,9 +141,7 @@ const Coboard = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <h2 className="font-display text-2xl font-bold text-cream mb-6">
-                Tech Stack
-              </h2>
+              <h2 className="font-display text-2xl font-bold text-cream mb-6">Tech Stack</h2>
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { label: "Frontend", value: "React, Canvas API, Tailwind CSS" },
@@ -145,34 +156,6 @@ const Coboard = () => {
                 ))}
               </div>
             </motion.div>
-
-            {/* Screenshots */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="space-y-6"
-            >
-              <h2 className="font-display text-2xl font-bold text-cream mb-6">
-                Screenshots
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="aspect-video bg-secondary rounded-lg overflow-hidden">
-                  <img
-                    src="/Coboard1.png"
-                    alt="Coboard - Whiteboard View"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="aspect-video bg-secondary rounded-lg overflow-hidden">
-                  <img
-                    src="/Coboard2.png"
-                    alt="Coboard - Collaboration View"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </motion.div>
           </div>
 
           {/* Right Column - Project Info */}
@@ -183,30 +166,19 @@ const Coboard = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">
-                ROLE
-              </h3>
+              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">ROLE</h3>
               <p className="text-base text-cream/70">Full-Stack Developer</p>
             </div>
-
             <div>
-              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">
-                DURATION
-              </h3>
+              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">DURATION</h3>
               <p className="text-base text-cream/70">2 Days</p>
             </div>
-
             <div>
-              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">
-                YEAR
-              </h3>
+              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">YEAR</h3>
               <p className="text-base text-cream/70">2026</p>
             </div>
-
             <div>
-              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">
-                LINKS
-              </h3>
+              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">LINKS</h3>
               <div className="space-y-3">
                 <a
                   href="https://coboard-realtime-whiteboard.netlify.app/"
@@ -217,7 +189,6 @@ const Coboard = () => {
                   <span>→</span>
                   <span className="text-sm">Live Demo</span>
                 </a>
-                {/* Uncomment when GitHub is ready */}
                 <a
                   href="https://github.com/Kimaya07/Coboard-realtime-whiteboard"
                   target="_blank"
@@ -232,6 +203,67 @@ const Coboard = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Screenshots - outside grid, full width */}
+      <section className="px-6 md:px-12 pb-24">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <h2 className="font-display text-2xl font-bold text-cream mb-6">Screenshots</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {screenshots.map((img, index) => (
+                <div
+                  key={index}
+                  className="aspect-video bg-black rounded-lg overflow-hidden cursor-zoom-in"
+                  onClick={() => setLightbox(img.src)}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-cream/30 tracking-widest mt-4">
+              CLICK TO ENLARGE
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-6"
+          onClick={() => setLightbox(null)}
+        >
+          <motion.img
+            initial={{ scale: 0.85, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            src={lightbox}
+            alt="Fullscreen preview"
+            className="max-w-full max-h-[90vh] rounded-lg object-contain shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            className="absolute top-6 right-8 text-white/60 hover:text-white text-4xl font-light transition-colors"
+            onClick={() => setLightbox(null)}
+          >
+            ✕
+          </button>
+          <p className="absolute bottom-6 text-white/30 text-xs tracking-widest">
+            CLICK ANYWHERE TO CLOSE
+          </p>
+        </motion.div>
+      )}
 
       <Footer />
     </div>
