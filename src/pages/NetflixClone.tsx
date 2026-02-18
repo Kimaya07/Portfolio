@@ -2,8 +2,35 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { useState, useEffect } from "react";
 
 const NetflixClone = () => {
+  const [lightbox, setLightbox] = useState<string | null>(null);
+
+  // Disable body scroll when lightbox is open
+  useEffect(() => {
+    if (lightbox) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [lightbox]);
+
+  const screenshots = [
+    { src: "/HomeScreen.png", alt: "Netflix Clone - Homepage" },
+    { src: "/Movies.png", alt: "Netflix Clone - Movies" },
+    { src: "/TvShows.png", alt: "Netflix Clone - TV Shows" },
+    { src: "/Login.png", alt: "Netflix Clone - Login" },
+  ];
+
+  const scrollScreenshots = (direction: "left" | "right") => {
+    const el = document.getElementById("screenshot-scroll");
+    if (el) el.scrollBy({ left: direction === "left" ? -600 : 600, behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -16,7 +43,6 @@ const NetflixClone = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Back Button */}
             <Link
               to="/work"
               className="inline-flex items-center gap-2 text-cream/60 hover:text-cream transition-colors mb-8"
@@ -25,7 +51,6 @@ const NetflixClone = () => {
               <span className="text-sm tracking-widest">BACK TO WORK</span>
             </Link>
 
-            {/* Project Title */}
             <h1 className="font-display text-display-lg md:text-display-xl font-bold text-cream mb-4">
               NETFLIX CLONE
             </h1>
@@ -33,7 +58,6 @@ const NetflixClone = () => {
               REACT • FIREBASE • TMDB API
             </p>
 
-            {/* Project Tags */}
             <div className="flex flex-wrap gap-3 mb-12">
               <span className="px-4 py-2 bg-cream/10 text-cream text-xs tracking-widest rounded-full">
                 STREAMING PLATFORM
@@ -67,28 +91,27 @@ const NetflixClone = () => {
         </motion.div>
       </section>
 
-      {/* Project Details */}
-      <section className="px-6 md:px-12 pb-24">
+      {/* Project Details - Overview + Sidebar ONLY (no screenshots here) */}
+      <section className="px-6 md:px-12 pb-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-24">
-          {/* Left Column - Overview */}
+
+          {/* Left Column */}
           <div className="lg:col-span-2 space-y-12">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <h2 className="font-display text-2xl font-bold text-cream mb-6">
-                Overview
-              </h2>
+              <h2 className="font-display text-2xl font-bold text-cream mb-6">Overview</h2>
               <p className="text-base text-cream/70 leading-relaxed mb-4">
-                A fully responsive streaming platform clone that replicates Netflix's 
-                core functionality. Built with React and Firebase, this project showcases 
-                dynamic content browsing, user authentication, and real-time data integration 
+                A fully responsive streaming platform clone that replicates Netflix's
+                core functionality. Built with React and Firebase, this project showcases
+                dynamic content browsing, user authentication, and real-time data integration
                 with the TMDB API.
               </p>
               <p className="text-base text-cream/70 leading-relaxed">
-                The application features personalized user profiles, secure authentication, 
-                and smooth navigation across movie and TV show categories. Every component 
+                The application features personalized user profiles, secure authentication,
+                and smooth navigation across movie and TV show categories. Every component
                 is optimized for performance and designed to deliver a seamless viewing experience.
               </p>
             </motion.div>
@@ -98,9 +121,7 @@ const NetflixClone = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <h2 className="font-display text-2xl font-bold text-cream mb-6">
-                Key Features
-              </h2>
+              <h2 className="font-display text-2xl font-bold text-cream mb-6">Key Features</h2>
               <ul className="space-y-4">
                 {[
                   "Responsive UI that adapts seamlessly to all screen sizes",
@@ -108,7 +129,7 @@ const NetflixClone = () => {
                   "Real-time movie and TV show data from TMDB API",
                   "Dynamic content categorization and browsing",
                   "Smooth page transitions and animations",
-                  "Optimized performance with code splitting"
+                  "Optimized performance with code splitting",
                 ].map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="text-gold mt-1">→</span>
@@ -123,49 +144,18 @@ const NetflixClone = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <h2 className="font-display text-2xl font-bold text-cream mb-6">
-                Tech Stack
-              </h2>
+              <h2 className="font-display text-2xl font-bold text-cream mb-6">Tech Stack</h2>
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { label: "Frontend", value: "React, Tailwind CSS" },
                   { label: "Backend", value: "MongoDB" },
                   { label: "API", value: "TMDB API" },
-                //   { label: "Auth", value: "Firebase Authentication" }
                 ].map((tech, index) => (
                   <div key={index} className="p-4 bg-cream/5 rounded-lg">
                     <p className="text-xs text-cream/50 mb-1 tracking-widest">{tech.label}</p>
                     <p className="text-sm text-cream font-medium">{tech.value}</p>
                   </div>
                 ))}
-              </div>
-            </motion.div>
-
-            {/* Additional Images/Screenshots */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="space-y-6"
-            >
-              <h2 className="font-display text-2xl font-bold text-cream mb-6">
-                Screenshots
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="aspect-video bg-secondary rounded-lg overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800&h=600&fit=crop"
-                    alt="Netflix Clone - Homepage"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="aspect-video bg-secondary rounded-lg overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=800&h=600&fit=crop"
-                    alt="Netflix Clone - Browse"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
               </div>
             </motion.div>
           </div>
@@ -178,30 +168,19 @@ const NetflixClone = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">
-                ROLE
-              </h3>
+              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">ROLE</h3>
               <p className="text-base text-cream/70">Full-Stack Developer</p>
             </div>
-
             <div>
-              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">
-                DURATION
-              </h3>
+              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">DURATION</h3>
               <p className="text-base text-cream/70">2 Weeks</p>
             </div>
-
             <div>
-              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">
-                YEAR
-              </h3>
-              <p className="text-base text-cream/70">2025</p>
+              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">YEAR</h3>
+              <p className="text-base text-cream/70">2026</p>
             </div>
-
             <div>
-              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">
-                LINKS
-              </h3>
+              <h3 className="font-display text-sm font-bold text-cream mb-4 tracking-widest">LINKS</h3>
               <div className="space-y-3">
                 <a
                   href="https://github.com/Kimaya07/Netflix-Clone"
@@ -212,40 +191,97 @@ const NetflixClone = () => {
                   <span>→</span>
                   <span className="text-sm">GitHub Repository</span>
                 </a>
-                {/* <a
-                  href=""
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gold hover:text-cream transition-colors"
-                >
-                  <span>→</span>
-                  <span className="text-sm">Live Demo</span>
-                </a> */}
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Next Project */}
-      {/* <section className="px-6 md:px-12 py-24 border-t border-cream/10">
+      {/* Screenshots - FULLY OUTSIDE the grid so it gets full width */}
+      <section className="px-6 md:px-12 pb-24">
         <div className="max-w-7xl mx-auto">
-          <Link
-            to="/work/ai-chatbot"
-            className="group flex items-center justify-between hover-lift"
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div>
-              <p className="text-xs tracking-widest text-cream/60 mb-2">NEXT PROJECT</p>
-              <h3 className="font-display text-3xl font-bold text-cream group-hover:text-gold transition-colors">
-                Real-Time AI Chatbot
-              </h3>
+            <h2 className="font-display text-2xl font-bold text-cream mb-6">Screenshots</h2>
+
+            <div className="relative">
+              {/* Left Arrow */}
+              <button
+                onClick={() => scrollScreenshots("left")}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 w-10 h-10 bg-cream/10 hover:bg-cream/25 rounded-full flex items-center justify-center text-cream transition-colors"
+              >
+                ←
+              </button>
+
+              {/* Scroll Strip */}
+              <div
+                id="screenshot-scroll"
+                className="flex gap-4 overflow-x-auto pb-4"
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              >
+                {screenshots.map((img, index) => (
+                  <div
+                    key={index}
+                    className="flex-none w-[85vw] md:w-[60vw] lg:w-[35vw] aspect-video bg-black rounded-lg overflow-hidden cursor-zoom-in"
+                    onClick={() => setLightbox(img.src)}
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              {/* Right Arrow */}
+              <button
+                onClick={() => scrollScreenshots("right")}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 w-10 h-10 bg-cream/10 hover:bg-cream/25 rounded-full flex items-center justify-center text-cream transition-colors"
+              >
+                →
+              </button>
             </div>
-            <span className="text-4xl text-cream/40 group-hover:text-cream transition-colors">
-              →
-            </span>
-          </Link>
+
+            <p className="text-xs text-cream/30 tracking-widest mt-4">
+              USE ARROWS OR SCROLL • CLICK TO ENLARGE
+            </p>
+          </motion.div>
         </div>
-      </section> */}
+      </section>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-6"
+          onClick={() => setLightbox(null)}
+        >
+          <motion.img
+            initial={{ scale: 0.85, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            src={lightbox}
+            alt="Fullscreen preview"
+            className="max-w-full max-h-[90vh] rounded-lg object-contain shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            className="absolute top-6 right-8 text-white/60 hover:text-white text-4xl font-light transition-colors"
+            onClick={() => setLightbox(null)}
+          >
+            ✕
+          </button>
+          <p className="absolute bottom-6 text-white/30 text-xs tracking-widest">
+            CLICK ANYWHERE TO CLOSE
+          </p>
+        </motion.div>
+      )}
 
       <Footer />
     </div>

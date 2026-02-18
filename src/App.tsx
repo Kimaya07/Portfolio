@@ -11,6 +11,7 @@ import Info from "./pages/Info";
 import NotFound from "./pages/NotFound";
 import NetflixClone from "./pages/NetflixClone";
 import WorkInProgress from "./pages/WorkInProgress";
+import Coboard from "./pages/Coboard";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           {/* <Route path="/side" element={<Side />} /> */}
           <Route path="/info" element={<Info />} />
           <Route path="/work/netflix-clone" element={<NetflixClone />} />
+          <Route path="/work/Coboard" element={<Coboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
            <Route path="/work/:slug" element={<WorkInProgress />} />

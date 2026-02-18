@@ -4,18 +4,26 @@ import { Link } from "react-router-dom";
 const projects = [
   {
     id: 1,
+    title: "COBOARD",
+    type: "REAL-TIME COLLABORATIVE WHITEBOARD",
+    category: "Web",
+    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&h=800&fit=crop",
+    slug: "coboard",
+  },
+  {
+    id: 2,
     title: "NETFLIX CLONE",
     type: "REACT • FIREBASE • TMDB API",
     image: "https://images.unsplash.com/photo-1512070679279-8988d32161be?q=80&w=1938&auto=format&fit=crop",
     slug: "netflix-clone",
   },
-  {
-    id: 2,
-    title: "REAL-TIME AI CHATBOT",
-    type: "REACT • NODE.JS • GEMINI API",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1932&auto=format&fit=crop",
-    slug: "ai-chatbot",
-  },
+  // {
+  //   id: 3,
+  //   title: "REAL-TIME AI CHATBOT",
+  //   type: "REACT • NODE.JS • GEMINI API",
+  //   image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1932&auto=format&fit=crop",
+  //   slug: "ai-chatbot",
+  // },
 ];
 
 export const FeaturedProjects = () => {
