@@ -175,7 +175,7 @@ const Info = () => {
                   { 
                     role: "ReactJS Developer", 
                     company: "Fareintelligence Pvt Ltd", 
-                    years: "Dec 2024 — Jun 2025" 
+                    years: "Dec 2024 — Sep 2025" 
                   },
                   { 
                     role: "UI/UX Intern", 
